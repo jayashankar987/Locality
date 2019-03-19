@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Locality</string>
+    <string name="email_hint">Enter Email</string>
+    <string name="password_hint">Enter Password</string>
+    <string name="label_signin">Sign In</string>
+    <string name="register">Register</string>
+    <string name="confirm_password">Confirm Password</string>
+</resources>

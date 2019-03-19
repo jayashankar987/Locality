@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_normal">18dp</dimen>
+    <dimen name="login_top_margin">150dp</dimen>
+    <dimen name="buttonPadding">40dp</dimen>
+</resources>

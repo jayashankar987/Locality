@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply plugin : Deps.gms_services
+
+android {
+    compileSdkVersion Deps.androidVersion.compileSdk
+    defaultConfig {
+        applicationId "com.jay.locality"
+        minSdkVersion Deps.androidVersion.minSdk
+        targetSdkVersion Deps.androidVersion.targetSdk
+        versionCode Deps.androidVersion.versionCode
+        versionName Deps.androidVersion.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Deps.kotlin.kotlin_stdlib
+    implementation Deps.support.appcompact
+    implementation Deps.jannotation
+
+    implementation Deps.dagger.dagger
+    kapt Deps.dagger.compiler
+    annotationProcessor Deps.dagger.compiler
+    kapt Deps.dagger.compiler
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation Deps.firebase.core
+
+    implementation Deps.reactiveX.rxJava
+    implementation Deps.reactiveX.rxAndroid
+    implementation Deps.timber
+
+    implementation Deps.retrofit.retrofitCore
+    implementation Deps.retrofit.converterGson
+    implementation("com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofitVersion}") {
+        exclude group: 'io.reactivex.rxjava2', module: 'rxjava'
+    }
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
