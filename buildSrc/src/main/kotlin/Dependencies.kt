@@ -7,10 +7,11 @@ object BuildPlugins {
 private object Versions {
     val gradle = "3.3.2"
     val kotlin = "1.3.21"
-    val support_appcompat = "28.0.0"
+    val support_appcompat = "26.1.0"
 
-    val gms = "4.0.1"
+    val gms = "4.2.0"
     val firebase_core = "16.0.1"
+    val firebase_auth = "16.2.0"
     val jannotation = "1.0"
 
     val dagger = "2.9"
@@ -48,6 +49,7 @@ object Deps {
     //Firebase
     val firebase = object {
         val core = "com.google.firebase:firebase-core:${Versions.firebase_core}"
+        val auth  = "com.google.firebase:firebase-auth:${Versions.firebase_auth}"
     }
 
     //Dagger

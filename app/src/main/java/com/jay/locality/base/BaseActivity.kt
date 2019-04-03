@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.annotation.LayoutRes
 import android.support.v7.app.AppCompatActivity
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity<V : BaseView, S : BaseViewState, P : BasePresenter<V, S>> : AppCompatActivity() {
 
     @LayoutRes
     abstract fun layoutId(): Int
