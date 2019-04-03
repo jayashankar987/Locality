@@ -5,6 +5,7 @@ import com.jay.locality.R
 import com.jay.locality.base.BaseActivity
 
 class LoginActivity : BaseActivity() {
+
     override fun layoutId(): Int {
         return R.layout.activity_login
     }
