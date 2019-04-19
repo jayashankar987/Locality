@@ -1,9 +1,9 @@
 package com.jay.locality
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import com.jay.commons.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : com.jay.commons.base.BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

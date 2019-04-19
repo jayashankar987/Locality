@@ -1,4 +1,4 @@
-package com.jay.locality.di.base
+package com.jay.commons.base
 
 interface BaseState
 interface BaseView

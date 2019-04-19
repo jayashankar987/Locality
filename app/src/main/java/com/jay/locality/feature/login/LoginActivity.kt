@@ -1,17 +1,11 @@
 package com.jay.locality.feature.login
 
-import android.os.Bundle
 import com.jay.locality.R
-import com.jay.locality.base.BaseActivity
+import com.jay.commons.base.BaseActivity
 
-class LoginActivity : BaseActivity() {
+class LoginActivity : com.jay.commons.base.BaseActivity() {
     override fun layoutId(): Int {
         return R.layout.activity_login
     }
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 }

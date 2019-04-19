@@ -1,6 +1,7 @@
 object BuildPlugins {
     val android_gradle_plugin = "com.android.tools.build:gradle:${Versions.gradle}"
     val android_gms_service = "com.google.gms:google-services:${Versions.gms}"
+    val android_fabric = "io.fabric.tools:gradle:${Versions.fabric}"
 }
 
 
@@ -8,6 +9,8 @@ private object Versions {
     val gradle = "3.3.2"
     val kotlin = "1.3.21"
     val support_appcompat = "28.0.0"
+
+    val fabric = "1.+"
 
     val gms = "4.0.1"
     val firebase_core = "16.0.1"

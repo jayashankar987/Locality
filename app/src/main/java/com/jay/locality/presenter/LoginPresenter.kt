@@ -5,6 +5,4 @@ import com.jay.locality.model.LoginModel
 import javax.inject.Inject
 
 class LoginPresenter
-@Inject constructor(loginModel: LoginModel) : ILoginPresenter {
-
-}
+@Inject constructor(loginModel: LoginModel) : ILoginPresenter
