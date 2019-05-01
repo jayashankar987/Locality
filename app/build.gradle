@@ -32,18 +32,28 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation Deps.kotlin.kotlin_stdlib
     implementation Deps.support.appcompact
+    implementation Deps.support.design
     implementation Deps.jannotation
     implementation Deps.dagger.dagger
+    implementation Deps.firebase.core
+    implementation Deps.firebase.auth
     kapt Deps.dagger.compiler
     annotationProcessor Deps.dagger.compiler
     kapt Deps.dagger.compiler
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation Deps.firebase.core
     implementation Deps.reactiveX.rxJava
     implementation Deps.reactiveX.rxAndroid
     implementation Deps.timber
     implementation Deps.retrofit.retrofitCore
     implementation Deps.retrofit.converterGson
+
+    def daggerVersion = '2.15'
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+
     implementation("com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofitVersion}") {
         exclude group: 'io.reactivex.rxjava2', module: 'rxjava'
     }

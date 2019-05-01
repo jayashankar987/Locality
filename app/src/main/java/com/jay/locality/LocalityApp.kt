@@ -1,15 +1,34 @@
 package com.jay.locality
 
 import android.app.Application
-import io.fabric.sdk.android.Fabric
-import com.crashlytics.android.core.CrashlyticsCore
 import com.crashlytics.android.Crashlytics
+import com.crashlytics.android.core.CrashlyticsCore
+import com.jay.locality.di.AppModule
+import com.jay.locality.di.OnBoardingModule
+import com.jay.locality.di.component.AppComponent
+import com.jay.locality.di.component.DaggerAppComponent
+import com.jay.locality.di.component.OnBoardingComponent
 import com.jay.locality.utils.ReleaseTree
+import io.fabric.sdk.android.Fabric
 import timber.log.Timber
 
-
-
 class LocalityApp : Application() {
+
+    companion object {
+        val instance: LocalityApp by lazy {
+            LocalityApp()
+        }
+    }
+
+    val onboardingComponent: OnBoardingComponent by lazy {
+        appComponent.newOnBoardingComponent(OnBoardingModule())
+    }
+    private val appComponent: AppComponent by lazy {
+        DaggerAppComponent.builder()
+            .appModule(AppModule(this))
+            .build()
+    }
+
     override fun onCreate() {
         super.onCreate()
 

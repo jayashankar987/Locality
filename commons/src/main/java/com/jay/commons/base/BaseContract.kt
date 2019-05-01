@@ -14,5 +14,5 @@ interface BasePresenter<V : BaseView, S : BaseState> {
         this.view = null
     }
 
-    fun updateState(state: S)
+    fun updateView(state: S)
 }
