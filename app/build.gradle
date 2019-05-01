@@ -41,6 +41,9 @@ dependencies {
     annotationProcessor Deps.dagger.compiler
     kapt Deps.dagger.compiler
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation Deps.firebase.core
+    implementation Deps.firebase.auth
+
     implementation Deps.reactiveX.rxJava
     implementation Deps.reactiveX.rxAndroid
     implementation Deps.timber
@@ -64,4 +67,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':commons')
+
+    com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
 }
