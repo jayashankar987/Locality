@@ -19,7 +19,7 @@ class RegisterPresenter
     }
 
 
-    override fun registerFormValidationAction(email: String, password: String, confirmPassword: String) {
+    override fun registerFormValidationAction(email: String, password: String) {
 
         var valid = true
         if (registerFormState.isLoading) {
@@ -44,21 +44,6 @@ class RegisterPresenter
                 )
         }
 
-        if (confirmPassword.isEmpty()) {
-            valid = false
-            registerFormState = registerFormState.copy(
-                isLoading = false,
-                inputError = InputError(InputError.InputErrorType.CONFIRM_PWD_EMPTY_ERROR)
-            )
-        }
-
-        if (password != confirmPassword) {
-            valid = false
-            registerFormState = registerFormState.copy(
-                isLoading = false,
-                inputError = InputError(InputError.InputErrorType.PWD_MISMATCH_ERROR)
-            )
-        }
 
         if (valid) {
             firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {

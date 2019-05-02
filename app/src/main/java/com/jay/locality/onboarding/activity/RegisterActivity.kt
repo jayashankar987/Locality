@@ -2,7 +2,6 @@ package com.jay.locality.onboarding.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import com.google.firebase.auth.FirebaseAuth
 import com.jay.commons.base.BaseActivity
 import com.jay.commons.extensions.toast
@@ -37,17 +36,20 @@ class RegisterActivity : BaseActivity<IRegisterView, RegisterState, IRegisterPre
         register.setOnClickListener {
             val emailInput = email.text.toString()
             val passwordInput = password.text.toString()
-            val confirmPasswordInput = confirmPassword.text.toString()
-            presenter.registerFormValidationAction(emailInput, passwordInput, confirmPasswordInput)
+            presenter.registerFormValidationAction(emailInput, passwordInput)
+        }
+
+        login.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
         }
     }
 
     override fun showProgressBar() {
-        progressBar.visibility = View.VISIBLE
+        //progressBar.visibility = View.VISIBLE
     }
 
     override fun hideProgressBar() {
-        progressBar.visibility = View.GONE
+        //progressBar.visibility = View.GONE
     }
 
     override fun onInputError(inputError: InputError?) {
@@ -55,10 +57,6 @@ class RegisterActivity : BaseActivity<IRegisterView, RegisterState, IRegisterPre
         when (inputError?.errorType) {
             InputError.InputErrorType.EMAIL_EMPTY_ERROR -> email.error = "Email is Empty"
             InputError.InputErrorType.PWD_EMPTY_ERROR -> password.error = "Password is Empty"
-            InputError.InputErrorType.CONFIRM_PWD_EMPTY_ERROR -> confirmPassword.error = "confrim password is Empty"
-            InputError.InputErrorType.PWD_MISMATCH_ERROR -> {
-                this toast "password and confirm password are not same"
-            }
         }
     }
 

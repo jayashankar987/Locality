@@ -8,7 +8,7 @@ import com.jay.commons.base.BaseView
 
 class InputError(val errorType: InputErrorType) : Exception("Invalid Input Entry") {
     enum class InputErrorType {
-        EMAIL_EMPTY_ERROR, PWD_EMPTY_ERROR, CONFIRM_PWD_EMPTY_ERROR, PWD_MISMATCH_ERROR
+        EMAIL_EMPTY_ERROR, PWD_EMPTY_ERROR
     }
 }
 
@@ -22,7 +22,7 @@ interface IRegisterView : BaseView {
 }
 
 interface IRegisterPresenter : BasePresenter<IRegisterView, RegisterState> {
-    fun registerFormValidationAction(email: String, password: String, confirmPassword: String)
+    fun registerFormValidationAction(email: String, password: String)
 }
 
 

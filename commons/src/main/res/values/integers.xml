@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="poppins_font_regular">1</integer>
+    <integer name="poppins_font_medium">2</integer>
+    <integer name="poppins_font_semi_bold">3</integer>
+    <integer name="poppins_font_bold">4</integer>
+    <integer name="poppins_font_light">5</integer>
+</resources>
